@@ -15,15 +15,12 @@ var rootCmd = &cobra.Command{
 func init() {
 	rootCmd.PersistentFlags().StringVar(&dbPath, "database", "lists.db", "database file path")
 
-	findCmd.AddCommand(findListCmd)
-
 	newCmd.AddCommand(newEntryCmd)
 	newCmd.AddCommand(newListCmd)
 
 	printCmd.AddCommand(printEntriesCmd)
 	printCmd.AddCommand(printListsCmd)
 
-	rootCmd.AddCommand(findCmd)
 	rootCmd.AddCommand(newCmd)
 	rootCmd.AddCommand(printCmd)
 }

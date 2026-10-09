@@ -124,7 +124,7 @@ func NewStore(path string) (*Store, error) {
 		CREATE TABLE IF NOT EXISTS entries (
 			id      INTEGER PRIMARY KEY,
 			list_id INTEGER NOT NULL REFERENCES lists(id),
-			name    TEXT NOT NULL,
+			name    TEXT NOT NULL UNIQUE,
 			data    TEXT NOT NULL DEFAULT '{}'
 		);
 	`)
